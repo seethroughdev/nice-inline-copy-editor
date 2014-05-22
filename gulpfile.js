@@ -4,7 +4,9 @@ var gulp = require('gulp');
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 
-// set paths
+
+/*==========  CONFIG  ==========*/
+
 var path = {
   src: {
     root: './src/',
@@ -18,6 +20,7 @@ var path = {
 
 var bundle = browserify(path.src.js + 'index.js').bundle();
 
+
 /*==========  TASKS  ==========*/
 
 gulp.task('browserify', function() {
@@ -25,6 +28,7 @@ gulp.task('browserify', function() {
     .pipe(source('bundle.js'))
     .pipe(gulp.dest(path.dist.js));
 });
+
 
 /*==========  RUN  ==========*/
 
