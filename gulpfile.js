@@ -3,6 +3,9 @@
 var gulp = require('gulp')
 ,   browserify = require('browserify')
 ,   source = require('vinyl-source-stream')
+,   uglify = require('gulp-uglify')
+,   streamify = require('gulp-streamify')
+,   gzip = require('gulp-gzip')
 ,   livereload = require('gulp-livereload')
 ,   sass = require('gulp-sass')
 ,   csso = require('gulp-csso');
@@ -27,6 +30,7 @@ var path = {
 gulp.task('js', function() {
   return browserify(path.src.js + 'index.js').bundle({ debug:true })
     .pipe(source('bundle.js'))
+    .pipe(streamify(uglify()))
     .pipe(gulp.dest(path.dist.root))
     .pipe(livereload());
 });
