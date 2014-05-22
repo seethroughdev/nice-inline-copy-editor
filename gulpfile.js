@@ -1,9 +1,9 @@
 'use strict';
 
-var gulp = require('gulp');
-var browserify = require('browserify');
-var source = require('vinyl-source-stream');
-var livereload = require('gulp-livereload');
+var gulp = require('gulp')
+,   browserify = require('browserify')
+,   source = require('vinyl-source-stream')
+,   livereload = require('gulp-livereload');
 
 
 /*==========  CONFIG  ==========*/
@@ -23,7 +23,7 @@ var path = {
 /*==========  TASKS  ==========*/
 
 gulp.task('js', function() {
-  return browserify(path.src.js + 'index.js').bundle()
+  return browserify(path.src.js + 'index.js').bundle({ debug:true })
     .pipe(source('bundle.js'))
     .pipe(gulp.dest(path.dist.js))
     .pipe(livereload());
