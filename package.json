@@ -1,0 +1,19 @@
+{
+  "name": "copy-editor",
+  "version": "0.0.1",
+  "description": "An easy way to edit copy on a page for review",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/seethroughtrees/inline-copy-editor"
+  },
+  "author": "seethroughtrees",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/seethroughtrees/inline-copy-editor/issues"
+  },
+  "homepage": "https://github.com/seethroughtrees/inline-copy-editor"
+}
