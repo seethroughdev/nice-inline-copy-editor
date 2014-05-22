@@ -1,5 +1,6 @@
 var $ = window.jQuery || require('domtastic')
-,   nav = require('./modules/nav');
+,   nav = require('./modules/nav')
+,   events = require('./modules/events');
 
 var $body = $('body');
 
@@ -7,4 +8,6 @@ var $body = $('body');
 $body.attr('contenteditable', true);
 
 nav.init();
+
+events();
 
