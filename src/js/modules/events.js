@@ -1,7 +1,7 @@
 'use strict';
 
-var $ = window.jQuery || require('domtastic')
-,   nav = require('./nav')
+var $    = window.jQuery || require('domtastic')
+,   nav  = require('./nav')
 ,   html = require('./html');
 
 var events = function() {

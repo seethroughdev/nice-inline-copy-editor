@@ -1,6 +1,6 @@
 'use strict';
 
-var $ = window.jQuery || require('domtastic')
+var $    = window.jQuery || require('domtastic')
 ,   html = require('./html');
 
 var cssLocation = html.cssLocation;

@@ -1,5 +1,5 @@
-var $ = window.jQuery || require('domtastic')
-,   nav = require('./modules/nav')
+var $      = window.jQuery || require('domtastic')
+,   nav    = require('./modules/nav')
 ,   events = require('./modules/events');
 
 var $body = $('body');
