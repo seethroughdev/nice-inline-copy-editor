@@ -1,0 +1,15 @@
+ul#ice-nav {
+  position:fixed;
+  top: 0;
+  right: 0;
+  background: white;
+  list-style-type: none;
+  padding: 5px 20px;
+
+  li {
+    display: inline-block;
+    cursor: pointer;
+    padding: 5px 20px;
+  }
+
+}

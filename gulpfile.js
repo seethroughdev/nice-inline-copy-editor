@@ -3,7 +3,9 @@
 var gulp = require('gulp')
 ,   browserify = require('browserify')
 ,   source = require('vinyl-source-stream')
-,   livereload = require('gulp-livereload');
+,   livereload = require('gulp-livereload')
+,   sass = require('gulp-sass')
+,   csso = require('gulp-csso');
 
 
 /*==========  CONFIG  ==========*/
@@ -11,11 +13,11 @@ var gulp = require('gulp')
 var path = {
   src: {
     root: './src/',
-    js: './src/js/'
+    js: './src/js/',
+    css: './src/scss/'
   },
   dist: {
-    root: './dist/',
-    js: './dist/js/'
+    root: './dist/'
   }
 };
 
@@ -25,13 +27,22 @@ var path = {
 gulp.task('js', function() {
   return browserify(path.src.js + 'index.js').bundle({ debug:true })
     .pipe(source('bundle.js'))
-    .pipe(gulp.dest(path.dist.js))
+    .pipe(gulp.dest(path.dist.root))
+    .pipe(livereload());
+});
+
+gulp.task('css', function() {
+  return gulp.src(path.src.css + '*.scss')
+    .pipe(sass())
+    .pipe(csso())
+    .pipe(gulp.dest(path.dist.root))
     .pipe(livereload());
 });
 
 
-gulp.task('watch', [ 'js' ], function() {
-  gulp.watch(path.src.js + '*.js', [ 'js' ]);
+gulp.task('watch', [ 'js', 'css' ], function() {
+  gulp.watch(path.src.js + '**', [ 'js' ]);
+  gulp.watch(path.src.css + '**', [ 'css' ]);
 });
 
 
