@@ -3,6 +3,7 @@
 var gulp = require('gulp');
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
+var livereload = require('gulp-livereload');
 
 
 /*==========  CONFIG  ==========*/
@@ -18,22 +19,23 @@ var path = {
   }
 };
 
-var bundle = browserify(path.src.js + 'index.js').bundle();
-
 
 /*==========  TASKS  ==========*/
 
-gulp.task('browserify', function() {
-  return bundle
+gulp.task('js', function() {
+  return browserify(path.src.js + 'index.js').bundle()
     .pipe(source('bundle.js'))
-    .pipe(gulp.dest(path.dist.js));
+    .pipe(gulp.dest(path.dist.js))
+    .pipe(livereload());
+});
+
+
+gulp.task('watch', [ 'js' ], function() {
+  gulp.watch(path.src.js + '*.js', [ 'js' ]);
 });
 
 
 /*==========  RUN  ==========*/
 
-gulp.task('watch', [ 'browserify' ], function() {
-  gulp.watch(path.src.js + '**/*.js', [ 'browserify' ]);
-});
 
 gulp.task('default', [ 'watch' ]);
