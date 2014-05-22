@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/seethroughtrees/inline-copy-editor/issues"
   },
-  "homepage": "https://github.com/seethroughtrees/inline-copy-editor"
+  "homepage": "https://github.com/seethroughtrees/inline-copy-editor",
+  "devDependencies": {
+    "browserify": "^4.1.5",
+    "diff": "^1.0.8",
+    "domtastic": "^0.7.0",
+    "gulp": "^3.6.2",
+    "gulp-open": "^0.2.8",
+    "http-server": "^0.6.1"
+  }
 }
