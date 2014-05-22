@@ -1,7 +1,8 @@
 'use strict';
 
 var $ = window.jQuery || require('domtastic')
-,   nav = require('./nav');
+,   nav = require('./nav')
+,   html = require('./html');
 
 var events = function() {
 
@@ -16,6 +17,7 @@ var events = function() {
 
   $('#ice-toggle').on('click', function(e) {
     e.preventDefault();
+    window.console.log(html.getHTML());
   });
 
 };

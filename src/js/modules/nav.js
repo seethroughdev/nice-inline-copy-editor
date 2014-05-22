@@ -1,22 +1,16 @@
 'use strict';
 
-var $ = window.jQuery || require('domtastic');
+var $ = window.jQuery || require('domtastic')
+,   html = require('./html');
 
+var cssLocation = html.cssLocation;
 var body = document.getElementsByTagName('body')[ 0 ];
-
-
-// set template
-var template =  '<li id="ice-off">Off</li>';
-    template += '<li id="ice-diff">Diff</li>';
-    template += '<li id="ice-toggle">Original</li>';
-
-var cssLocation = '<link rel="stylesheet" href="index.css" type="text/css" />';
 
 var nav = {
 
   create: function() {
     var el = document.createElement('ul');
-    el.innerHTML = template;
+    el.innerHTML = html.navTemplate;
     el.setAttribute('id','ice-nav');
     el.setAttribute('contenteditable', false);
     this.style(el);
