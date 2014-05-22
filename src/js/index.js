@@ -1,12 +1,10 @@
 var $ = window.jQuery || require('domtastic')
 ,   nav = require('./modules/nav');
 
-var $body = $('body'),
-    initHTML = $body.html(),
-    postHTML = '';
+var $body = $('body');
 
 // Make page editable
 $body.attr('contenteditable', true);
 
-nav.append();
+nav.init();
 
