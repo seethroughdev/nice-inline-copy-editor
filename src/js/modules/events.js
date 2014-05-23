@@ -8,7 +8,7 @@ var events = function() {
 
   $('#nice-off').on('click', function(e) {
     e.preventDefault();
-    content.removeIce();
+    content.removeNice();
   });
 
   $('#nice-diff').on('click', function(e) {
