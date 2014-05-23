@@ -1,6 +1,6 @@
 'use strict';
 
-var $       = window.jQuery || require('domtastic')
+var $       = require('domtastic')
 ,   nav     = require('./nav')
 ,   content = require('./content');
 

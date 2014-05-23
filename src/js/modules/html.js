@@ -1,7 +1,5 @@
 'use strict';
 
-var $ = window.jQuery || require('domtastic');
-
 // set navTemplate
 var navTemplate =  '<li id="nice-off">Off</li>';
     navTemplate += '<li id="nice-diff">Diff</li>';

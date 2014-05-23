@@ -1,6 +1,6 @@
 'use strict';
 
-var $    = window.jQuery || require('domtastic')
+var $    = require('domtastic')
 ,   html = require('./html');
 
 var body = document.getElementsByTagName('body')[ 0 ];
