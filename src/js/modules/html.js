@@ -3,7 +3,7 @@
 // set navTemplate
 var navTemplate =  '<li id="nice-off">Off</li>';
     navTemplate += '<li id="nice-diff">Diff</li>';
-    navTemplate += '<li id="nice-toggle">Original</li>';
+    navTemplate += '<li id="nice-toggle">Toggle</li>';
 
 var html = {
 

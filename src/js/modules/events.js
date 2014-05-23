@@ -6,6 +6,10 @@ var $       = window.jQuery || require('domtastic')
 
 var events = function() {
 
+  $(document).on('click', '#nice-nav', function() {
+    $(this).toggleClass('is-min');
+  });
+
   $('#nice-off').on('click', function(e) {
     e.preventDefault();
     content.removeNice();
