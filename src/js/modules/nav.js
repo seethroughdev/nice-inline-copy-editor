@@ -14,7 +14,7 @@ var nav = {
   create: function() {
     var el = document.createElement('ul');
     el.innerHTML = html.navTemplate;
-    el.setAttribute('id','ice-nav');
+    el.setAttribute('id','nice-nav');
     el.setAttribute('contenteditable', false);
     this.style(el);
   },

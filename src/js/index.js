@@ -1,5 +1,4 @@
-var $       = window.jQuery || require('domtastic')
-,   nav     = require('./modules/nav')
+var nav     = require('./modules/nav')
 ,   events  = require('./modules/events')
 ,   content = require('./modules/content');
 

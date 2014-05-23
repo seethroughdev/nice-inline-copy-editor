@@ -11,7 +11,7 @@ var content = {
   },
 
   wrapContent: function() {
-    $body.html('<div id="ice-content">' + $body.html() + '</div>');
+    $body.html('<div id="nice-content">' + $body.html() + '</div>');
     return this.makeEditable($body);
   },
 
@@ -19,14 +19,14 @@ var content = {
     return el.attr('contenteditable', true);
   },
 
-  removeIce: function() {
+  removeNice: function() {
     $body
-      .html($('#ice-content').html())
+      .html($('#nice-content').html())
       .removeAttr('contenteditable');
   },
 
   getHTML: function() {
-    return $('#ice-content').html();
+    return $('#nice-content').html();
   }
 
 };

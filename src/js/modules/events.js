@@ -6,16 +6,16 @@ var $       = window.jQuery || require('domtastic')
 
 var events = function() {
 
-  $('#ice-off').on('click', function(e) {
+  $('#nice-off').on('click', function(e) {
     e.preventDefault();
     content.removeIce();
   });
 
-  $('#ice-diff').on('click', function(e) {
+  $('#nice-diff').on('click', function(e) {
     e.preventDefault();
   });
 
-  $('#ice-toggle').on('click', function(e) {
+  $('#nice-toggle').on('click', function(e) {
     e.preventDefault();
     window.console.log(content.getHTML());
   });
