@@ -3,10 +3,13 @@
 var $    = window.jQuery || require('domtastic')
 ,   html = require('./html');
 
-var cssLocation = html.cssLocation;
 var body = document.getElementsByTagName('body')[ 0 ];
 
 var nav = {
+
+  init: function() {
+    this.create();
+  },
 
   create: function() {
     var el = document.createElement('ul');
@@ -17,16 +20,12 @@ var nav = {
   },
 
   style: function(el) {
-    $('head').append(cssLocation);
+    $('head').append(html.cssLocation);
     this.append(el);
   },
 
   append: function(el) {
     body.appendChild(el);
-  },
-
-  init: function() {
-    this.create();
   }
 
 };

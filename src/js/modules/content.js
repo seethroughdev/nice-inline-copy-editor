@@ -6,6 +6,10 @@ var $body = $('body');
 
 var content = {
 
+  init: function() {
+    return this.wrapContent();
+  },
+
   wrapContent: function() {
     $body.html('<div id="ice-content">' + $body.html() + '</div>');
     return this.makeEditable($body);
@@ -16,16 +20,13 @@ var content = {
   },
 
   removeIce: function() {
-    $body.html($('#ice-content').html());
-    $body.removeAttr('contenteditable');
+    $body
+      .html($('#ice-content').html())
+      .removeAttr('contenteditable');
   },
 
-  getContent: function() {
+  getHTML: function() {
     return $('#ice-content').html();
-  },
-
-  init: function() {
-    this.wrapContent();
   }
 
 };

@@ -2,8 +2,7 @@
 
 var $       = window.jQuery || require('domtastic')
 ,   nav     = require('./nav')
-,   content = require('./content')
-,   html    = require('./html');
+,   content = require('./content');
 
 var events = function() {
 
@@ -18,7 +17,7 @@ var events = function() {
 
   $('#ice-toggle').on('click', function(e) {
     e.preventDefault();
-    window.console.log(html.getHTML());
+    window.console.log(content.getHTML());
   });
 
 };

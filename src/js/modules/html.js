@@ -11,11 +11,7 @@ var html = {
 
   navTemplate: navTemplate,
 
-  cssLocation: '<link rel="stylesheet" href="index.css" type="text/css" />',
-
-  getHTML: function() {
-    return $('body').html();
-  }
+  cssLocation: '<link rel="stylesheet" href="index.css" type="text/css" />'
 
 };
 
