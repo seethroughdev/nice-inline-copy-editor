@@ -1,6 +1,6 @@
 'use strict';
 
-var $ = require('domtastic');
+var $ = window.jQuery || require('domtastic');
 
 var $body = $('body');
 
