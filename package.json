@@ -21,6 +21,7 @@
     "diff": "^1.0.8",
     "domtastic": "^0.7.0",
     "gulp": "^3.6.2",
+    "gulp-autoprefixer": "0.0.7",
     "gulp-csso": "^0.2.8",
     "gulp-gzip": "0.0.8",
     "gulp-livereload": "^1.5.0",

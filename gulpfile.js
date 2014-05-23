@@ -8,6 +8,7 @@ var gulp       = require('gulp')
 ,   gzip       = require('gulp-gzip')
 ,   livereload = require('gulp-livereload')
 ,   sass       = require('gulp-sass')
+,   prefix     = require('gulp-autoprefixer')
 ,   csso       = require('gulp-csso');
 
 
@@ -38,6 +39,7 @@ gulp.task('js', function() {
 gulp.task('css', function() {
   return gulp.src(path.src.css + '*.scss')
     .pipe(sass())
+    .pipe(prefix("last 1 version", "> 1%", "ie 8", "ie 7"))
     .pipe(csso())
     .pipe(gulp.dest(path.dist.root))
     .pipe(livereload());
