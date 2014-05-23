@@ -4,6 +4,8 @@ var $ = window.jQuery || require('domtastic');
 
 var $body = $('body');
 
+var isOriginal = true;
+
 var content = {
 
   init: function() {
@@ -12,6 +14,7 @@ var content = {
 
   wrapContent: function() {
     $body.html('<div id="nice-content">' + $body.html() + '</div>');
+    this.originalHTML = this.currentHTML = this.getHTML();
     return this.makeEditable($body);
   },
 
@@ -27,7 +30,27 @@ var content = {
 
   getHTML: function() {
     return $('#nice-content').html();
-  }
+  },
+
+  setHTML: function(html) {
+    return $('#nice-content').html(html);
+  },
+
+  toggleHTML: function() {
+
+    isOriginal = this.getHTML() === this.originalHTML ? true : false;
+
+    !isOriginal ? this.currentHTML = this.getHTML() : this.currentHTML;
+
+    var html = !!isOriginal ? this.currentHTML : this.originalHTML;
+
+    this.setHTML(html);
+
+  },
+
+  originalHTML: '',
+
+  currentHTML: ''
 
 };
 

@@ -17,7 +17,8 @@ var events = function() {
 
   $('#nice-toggle').on('click', function(e) {
     e.preventDefault();
-    window.console.log(content.getHTML());
+    content.toggleHTML();
+    // window.console.log(content.originalHTML);
   });
 
 };
