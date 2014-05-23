@@ -1,13 +1,9 @@
-var $      = window.jQuery || require('domtastic')
-,   nav    = require('./modules/nav')
-,   events = require('./modules/events');
+var $       = window.jQuery || require('domtastic')
+,   nav     = require('./modules/nav')
+,   events  = require('./modules/events')
+,   content = require('./modules/content');
 
-var $body = $('body');
-
-// Make page editable
-$body.attr('contenteditable', true);
-
+content.init();
 nav.init();
-
 events();
 

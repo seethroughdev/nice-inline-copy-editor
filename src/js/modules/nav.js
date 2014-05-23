@@ -25,11 +25,6 @@ var nav = {
     body.appendChild(el);
   },
 
-  disable: function() {
-    var el = document.getElementById('ice-nav');
-    body.removeChild(el);
-  },
-
   init: function() {
     this.create();
   }
