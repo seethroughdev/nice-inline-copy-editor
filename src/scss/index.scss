@@ -1,32 +1,14 @@
 $liSize: 40px;
 
 ul#nice-nav {
-  position:fixed;
-  top: 10px;
-  right: 10px;
-  background: white;
-  list-style-type: none;
-  padding: 0;
-  transition: all 200ms linear;
-  background: white;
-  border: 4px dashed #f3f3f3;
-  border-radius: 10px;
-  overflow: hidden;
-  color: #555;
-  font-family: 'helvetica nueue', helvetica;
-  user-select: none;
-  text-align: center;
-  width: 300px;
+
 
   &:hover {
-    border-color: #e7e7e7;
   }
 
   &.is-min {
     width: $liSize;
-    padding: 0;
     height: $liSize;
-    border-radius: 50%;
     cursor: pointer;
     li, pre {
       display: none;
@@ -40,19 +22,12 @@ ul#nice-nav {
     background-position: 0 0;
     width: $liSize;
     height: $liSize;
-    margin: 0 5px;
     &:hover {
-      color: #888;
     }
 
   }
 
   pre {
-    margin: 0;
-    background: #fbfbfb;
-    text-align: left;
-    overflow-y: auto;
-    overflow-x: hidden;
   }
 
   #nice-off {
