@@ -1,7 +1,6 @@
 'use strict';
 
 var $       = window.jQuery || require('domtastic')
-,   nav     = require('./nav')
 ,   diff    = require('./diff')
 ,   content = require('./content');
 

@@ -1,8 +1,8 @@
-var nav     = require('./modules/nav')
+var obj     = require('./modules/obj')
 ,   events  = require('./modules/events')
 ,   content = require('./modules/content');
 
 content.init();
-nav.init();
+obj.init();
 events();
 
