@@ -9,7 +9,9 @@ var gulp       = require('gulp')
 ,   livereload = require('gulp-livereload')
 ,   sass       = require('gulp-sass')
 ,   prefix     = require('gulp-autoprefixer')
-,   csso       = require('gulp-csso');
+,   csso       = require('gulp-csso')
+,   svgo       = require('gulp-svgo')
+,   base64     = require('gulp-base64');
 
 
 /*==========  CONFIG  ==========*/
@@ -18,7 +20,9 @@ var path = {
   src: {
     root: './src/',
     js: './src/js/',
-    css: './src/scss/'
+    css: './src/scss/',
+    svg: './src/svg/',
+    images: './src/images/'
   },
   dist: {
     root: './dist/'
@@ -39,16 +43,27 @@ gulp.task('js', function() {
 gulp.task('css', function() {
   return gulp.src(path.src.css + '*.scss')
     .pipe(sass())
-    .pipe(prefix("last 1 version", "> 1%", "ie 8", "ie 7"))
+    .pipe(prefix('last 2 version', '> 1%'))
+    .pipe(base64({
+      extensions: [ 'svg', 'png' ],
+      debug: true
+    }))
     .pipe(csso())
     .pipe(gulp.dest(path.dist.root))
     .pipe(livereload());
 });
 
+gulp.task('svg', function() {
+  return gulp.src(path.src.images + '*.svg')
+    .pipe(svgo())
+    .pipe(gulp.dest(path.src.svg));
+});
 
-gulp.task('watch', [ 'js', 'css' ], function() {
+
+gulp.task('watch', [ 'js', 'css', 'svg' ], function() {
   gulp.watch(path.src.js + '**', [ 'js' ]);
   gulp.watch(path.src.css + '**', [ 'css' ]);
+  gulp.watch(path.src.images + '**', [ 'svg' ]);
 });
 
 

@@ -1,9 +1,9 @@
 'use strict';
 
 // set navTemplate
-var navTemplate =  '<li id="nice-off">Off</li>';
-    navTemplate += '<li id="nice-diff">Diff</li>';
-    navTemplate += '<li id="nice-toggle">Toggle</li>';
+var navTemplate =  '<li id="nice-off" title="Turn off NICE"></li>';
+    navTemplate += '<li id="nice-diff" title="See Diff"></li>';
+    navTemplate += '<li id="nice-toggle" title="Toggle Original"></li>';
 
 var html = {
 

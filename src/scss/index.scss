@@ -1,3 +1,5 @@
+$liSize: 40px;
+
 ul#nice-nav {
   position:fixed;
   top: 10px;
@@ -21,9 +23,9 @@ ul#nice-nav {
   }
 
   &.is-min {
-    width: 25px;
+    width: $liSize;
     padding: 0;
-    height: 25px;
+    height: $liSize;
     border-radius: 50%;
     cursor: pointer;
     li, pre {
@@ -32,11 +34,13 @@ ul#nice-nav {
   }
 
   li {
-    display: inline-block;
+    display: block;
     cursor: pointer;
-    padding: 10px 20px;
-    text-transform: uppercase;
-
+    background-size: contain;
+    background-position: 0 0;
+    width: $liSize;
+    height: $liSize;
+    margin: 0 5px;
     &:hover {
       color: #888;
     }
@@ -50,5 +54,22 @@ ul#nice-nav {
     overflow-y: auto;
     overflow-x: hidden;
   }
+
+  #nice-off {
+    background-image: url(../svg/power.svg);
+  }
+
+  #nice-diff {
+    background-image: url(../svg/diff.svg);
+  }
+
+  #nice-toggle {
+    background-image: url(../svg/toggle.svg);
+  }
+
+  #nice-collapse {
+    background-image: url(../svg/collapse.svg);
+  }
+
 
 }
