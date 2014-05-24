@@ -2,9 +2,8 @@
 
 var $ = window.jQuery || require('domtastic');
 
-var $body = $('body');
-
-var isOriginal = true;
+var $body      = $('body'),
+    isOriginal = true;
 
 var content = {
 
