@@ -1,3 +1,5 @@
+'use strict';
+
 var $ = window.jQuey || require('domtastic')
 ,   jsdiff = require('diff')
 ,   content = require('./content');
@@ -10,7 +12,7 @@ var diffObj = {
   },
 
   populateDiff: function(diff) {
-    var $pre = $('#nice-pre').html('');
+    var $pre = $('#nice-pre').html('')
     ,   color
     ,   span;
 
@@ -25,10 +27,7 @@ var diffObj = {
       }
     });
   }
-
-
-
-}
+};
 
 
 module.exports = diffObj;

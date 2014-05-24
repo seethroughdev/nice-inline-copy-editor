@@ -40,9 +40,11 @@ var content = {
 
     isOriginal = this.getHTML() === this.originalHTML ? true : false;
 
-    !isOriginal ? this.currentHTML = this.getHTML() : this.currentHTML;
+    if (!isOriginal) {
+      this.currentHTML = this.getHTML();
+    }
 
-    var html = !!isOriginal ? this.currentHTML : this.originalHTML;
+    var html = isOriginal ? this.currentHTML : this.originalHTML;
 
     this.setHTML(html);
 
