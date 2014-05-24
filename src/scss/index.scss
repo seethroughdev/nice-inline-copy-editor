@@ -4,7 +4,7 @@ ul#nice-nav {
   right: 10px;
   background: white;
   list-style-type: none;
-  padding: 0 20px;
+  padding: 0;
   transition: all 200ms linear;
   background: white;
   border: 4px dashed #f3f3f3;
@@ -13,6 +13,8 @@ ul#nice-nav {
   color: #555;
   font-family: 'helvetica nueue', helvetica;
   user-select: none;
+  text-align: center;
+  width: 300px;
 
   &:hover {
     border-color: #e7e7e7;
@@ -39,6 +41,14 @@ ul#nice-nav {
       color: #888;
     }
 
+  }
+
+  pre {
+    margin: 0;
+    background: #fbfbfb;
+    text-align: left;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 
 }

@@ -2,32 +2,27 @@ var $ = window.jQuey || require('domtastic')
 ,   jsdiff = require('diff')
 ,   content = require('./content');
 
-// var display = document.getElementsByTagName('pre')[0];
-
-// function createDiff(part) {
-//   console.log(part);
-//   var color = part.added ? 'green' : part.removed ? 'red' : 'grey';
-//   var span = document.createElement('span');
-//   span.style.color = color;
-//   span.appendChild(document.createTextNode(part.value));
-//   display.appendChild(span);
-// }
-
 var diffObj = {
 
   init: function() {
-    var diff = jsdiff.diffWords(content.originalHTML, content.getHTML());
-    this.setupDiff(diff);
+    var diff = jsdiff.diffLines(content.originalHTML, content.getHTML());
+    this.populateDiff(diff);
   },
 
-  setupDiff: function(diff) {
+  populateDiff: function(diff) {
+    var $pre = $('#nice-pre').html('');
+    ,   color
+    ,   span;
+
+
     diff.forEach(function(part) {
-      window.console.log(part);
-      var color = part.added ? 'green' : part.removed ? 'red' : 'grey';
-      var span = document.createElement('span');
-      span.style.color = color;
-      span.appendChild(document.createTextNode(part.value));
-      $('pre').append(span);
+      if (part.added || part.removed) {
+        color = part.added ? 'green' : part.removed ? 'red' : 'grey';
+        span = document.createElement('span');
+        span.style.color = color;
+        span.appendChild(document.createTextNode(part.value));
+        $pre.append(span);
+      }
     });
   }
 

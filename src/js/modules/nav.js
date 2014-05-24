@@ -21,6 +21,13 @@ var nav = {
 
   style: function(el) {
     $('head').append(html.cssLocation);
+    this.addPre(el);
+  },
+
+  addPre: function(el) {
+    var pre = document.createElement('pre');
+    pre.setAttribute('id', 'nice-pre');
+    el.appendChild(pre);
     this.append(el);
   },
 
