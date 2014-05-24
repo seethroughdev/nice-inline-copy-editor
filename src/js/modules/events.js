@@ -2,6 +2,7 @@
 
 var $       = window.jQuery || require('domtastic')
 ,   nav     = require('./nav')
+,   diff    = require('./diff')
 ,   content = require('./content');
 
 var events = function() {
@@ -17,6 +18,7 @@ var events = function() {
 
   $('#nice-diff').on('click', function(e) {
     e.preventDefault();
+    diff.init();
   });
 
   $('#nice-toggle').on('click', function(e) {
