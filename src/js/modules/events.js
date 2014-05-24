@@ -6,8 +6,9 @@ var $       = window.jQuery || require('domtastic')
 
 var events = function() {
 
-  $(document).on('click', '#nice-nav', function() {
-    $(this).toggleClass('is-min');
+  $('#nice-min').on('click', function(e) {
+    e.preventDefault();
+    $('#nice-obj').toggleClass('is-min');
   });
 
   $('#nice-off').on('click', function(e) {
@@ -23,7 +24,6 @@ var events = function() {
   $('#nice-toggle').on('click', function(e) {
     e.preventDefault();
     content.toggleHTML();
-    // window.console.log(content.originalHTML);
   });
 
 };

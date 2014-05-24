@@ -1,30 +1,66 @@
-$liSize: 40px;
+$liSize: 60px;
+$bg: hsla(0, 11%, 91%, 1);
+$primary: hsla(0, 0%, 61%, 1);
+$secondary: #555;
 
-ul#nice-nav {
-
-
-  &:hover {
-  }
+#nice-obj {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  text-align: center;
+  overflow: hidden;
+  transition: all 200ms linear;
+  min-height: 300px;
 
   &.is-min {
     width: $liSize;
-    height: $liSize;
-    cursor: pointer;
-    li, pre {
-      display: none;
+    height: $liSize + 18px;
+    min-height: $liSize + 18px;
+
+    #nice-min {
+      transform: rotate(-90deg);
     }
+
   }
+
+}
+
+#nice-nav {
+  float: right;
+  background: $bg;
+  margin: 0;
+  padding: 0;
+  border: 3px solid #fbfbfb;
+  border-top: 0;
+  border-right: 0;
 
   li {
     display: block;
     cursor: pointer;
-    background-size: contain;
-    background-position: 0 0;
+    background-size: $liSize * .75 $liSize * .75;
+    background-position: center center;
+    background-repeat: no-repeat;
     width: $liSize;
     height: $liSize;
+    font-size: 12px;
     &:hover {
+      background-color: darken($bg, 3%);
     }
 
+  }
+
+  #nice-title {
+    font-weight: 600;
+    background: $primary;
+    color: white;
+    text-transform: uppercase;
+    height: auto;
+    margin: 0;
+    width: 100%;
+    height: 18px;
+    line-height: 18px;
   }
 
   pre {
@@ -42,8 +78,9 @@ ul#nice-nav {
     background-image: url(../svg/toggle.svg);
   }
 
-  #nice-collapse {
+  #nice-min {
     background-image: url(../svg/collapse.svg);
+    transform: rotate(90deg);
   }
 
 
