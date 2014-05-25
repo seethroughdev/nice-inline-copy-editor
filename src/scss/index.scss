@@ -3,12 +3,21 @@ $bg: hsla(0, 11%, 91%, 1);
 $primary: hsla(0, 0%, 61%, 1);
 $secondary: #555;
 
+@font-face {
+  font-family: 'myfont';
+  src: url('../font/myfont.woff') format('woff'),
+       url('../font/myfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 #nice-obj {
   position: fixed;
   top: 10px;
   right: 10px;
   z-index: 1000;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
   text-align: center;
   overflow: hidden;
   transition: all 200ms linear;
@@ -20,7 +29,7 @@ $secondary: #555;
     min-height: $liSize + 18px;
 
     #nice-min {
-      transform: rotate(-90deg);
+      // transform: rotate(-90deg);
     }
 
   }
@@ -39,20 +48,25 @@ $secondary: #555;
   li {
     display: block;
     cursor: pointer;
-    background-size: $liSize * .75 $liSize * .75;
-    background-position: center center;
-    background-repeat: no-repeat;
     width: $liSize;
-    height: $liSize;
     font-size: 12px;
+    border-top: 1px solid white;
+    border-bottom: 1px solid darken($bg, 5%);
+    font-family: 'myfont';
+    font-size: $liSize * .6;
+    line-height: 1em;
+    display: block;
+    padding: 10px 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     &:hover {
-      background-color: darken($bg, 3%);
+      color: red;
     }
-
   }
 
   #nice-title {
     font-weight: 600;
+    font-size: 12px;
     background: $primary;
     color: white;
     text-transform: uppercase;
@@ -60,27 +74,27 @@ $secondary: #555;
     margin: 0;
     width: 100%;
     height: 18px;
-    line-height: 18px;
+    line-height: 15px;
+    padding: 0;
   }
 
   pre {
   }
 
-  #nice-off {
-    background-image: url(../svg/power.svg);
-  }
+  // #nice-off {
+  //   content: '\57345';
+  // }
 
-  #nice-diff {
-    background-image: url(../svg/diff.svg);
-  }
+  // #nice-diff {
+  //   background-image: url(../svg/diff.svg);
+  // }
 
-  #nice-toggle {
-    background-image: url(../svg/toggle.svg);
-  }
+  // #nice-toggle {
+  //   background-image: url(../svg/toggle.svg);
+  // }
 
   #nice-min {
-    background-image: url(../svg/collapse.svg);
-    transform: rotate(90deg);
+    // transform: rotate(90deg);
   }
 
 
