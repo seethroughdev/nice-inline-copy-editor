@@ -32,7 +32,10 @@ var content = {
     return html
             .trim()
             .replace(/>\s+</g, '><')
-            .replace(/></g, '>\n\n<');
+            .replace(/></g, '>\n\n<')
+            .replace(/^<iframe.+\/iframe>/g, '')
+            .replace(/^<object.+\/object>/g, '')
+            .replace(/<script.+\/script>/g, '');
   },
 
   setHTML: function(html) {
