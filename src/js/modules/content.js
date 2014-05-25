@@ -28,7 +28,11 @@ var content = {
   },
 
   getHTML: function() {
-    return $('#nice-content').html();
+    var html = $('#nice-content').html();
+    return html
+            .trim()
+            .replace(/>\s+</g, '><')
+            .replace(/></g, '>\n\n<');
   },
 
   setHTML: function(html) {

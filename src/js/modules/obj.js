@@ -23,7 +23,7 @@ var nav = {
   style: function(div) {
     var link = document.createElement('link');
     link.setAttribute('rel','stylesheet');
-    link.setAttribute('href','index.css');
+    link.setAttribute('href','http://0.0.0.0:8080/index.css');
     link.setAttribute('type','text/css');
     head.appendChild(link);
     this.append(div);
