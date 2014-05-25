@@ -57,6 +57,7 @@ gulp.task('css', function() {
 
 gulp.task('svg', function() {
   return gulp.src(path.src.svg + '*.svg')
+    .pipe(changed(path.src.font, { extension: '.ttf' }))
     .pipe(iconfont({
       fontName: 'myfont'
     }))
