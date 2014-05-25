@@ -24,7 +24,7 @@ $tertiary: #fbfbfb;
   transition: all 200ms linear;
 
   &.is-min {
-    width: $liSize + 2;
+    width: $liSize;
     height: $liSize + 18px;
     min-height: $liSize + 18px;
 
@@ -39,11 +39,11 @@ $tertiary: #fbfbfb;
     line-height: 2.5em;
     width: auto;
     float: left;
-    border: 3px solid $bg;
+    border: 5px solid lighten($bg, 3%);
     border-radius: 5px 0 0 5px;
     border-right: 0;
     transition: all 200ms linear;
-    z-index: 999;
+    z-index: -10;
     overflow: hidden;
     display: none;
     max-width: 600px;
@@ -51,6 +51,9 @@ $tertiary: #fbfbfb;
     overflow: auto;
     background: white;
     white-space: pre-line;
+    font-size: 14px;
+    margin-top: 18px;
+    margin-bottom: 0;
     span {
       display: block;
       white-space: wrap;
@@ -72,6 +75,9 @@ $tertiary: #fbfbfb;
           margin-right: 10px;
         }
       }
+      &::selection {
+        background: hsla(66, 100%, 92%, 1);
+      }
     }
     &.is-active {
       display: inline-block;
@@ -84,9 +90,6 @@ $tertiary: #fbfbfb;
   background: $bg;
   margin: 0;
   padding: 0;
-  border: 3px solid $tertiary;
-  border-top: 0;
-  border-right: 0;
   z-index: 1000;
   li {
     display: block;
