@@ -14,14 +14,17 @@ var diffObj = {
   populateDiff: function(diff) {
     var $pre = $('#nice-pre').html('')
     ,   color
+    ,   klass
     ,   span;
 
 
     diff.forEach(function(part) {
       if (part.added || part.removed) {
         color = part.added ? 'green' : part.removed ? 'red' : 'grey';
+        klass = part.added ? 'is-added' : part.removed ? 'is-removed' : '';
         span = document.createElement('span');
         span.style.color = color;
+        span.setAttribute('class', klass);
         span.appendChild(document.createTextNode(part.value));
         $pre.append(span);
       }

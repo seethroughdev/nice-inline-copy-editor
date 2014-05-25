@@ -2,6 +2,7 @@ $liSize: 60px;
 $bg: hsla(0, 11%, 91%, 1);
 $primary: hsla(0, 0%, 61%, 1);
 $secondary: #555;
+$tertiary: #fbfbfb;
 
 @font-face {
   font-family: 'myfont';
@@ -33,6 +34,48 @@ $secondary: #555;
       display: block;
     }
   }
+
+  pre {
+    text-align: left;
+    line-height: 2.5em;
+    width: auto;
+    float: left;
+    border: 3px solid $tertiary;
+    border-radius: 5px 0 0 5px;
+    border-right: 0;
+    transition: all 200ms linear;
+    z-index: 999;
+    overflow: hidden;
+    display: none;
+    max-width: 600px;
+    overflow: auto;
+    span {
+      display: block;
+      white-space: nowrap;
+      padding: 0 10px;
+      background: white;
+      &:nth-child(even) {
+        background: $tertiary;
+      }
+      &.is-added {
+        &:before {
+          content: '++';
+          display: inline-block;
+          margin-right: 10px;
+        }
+      }
+      &.is-removed {
+        &:before {
+          content: '--';
+          display: inline-block;
+          margin-right: 10px;
+        }
+      }
+    }
+    &.is-active {
+      display: inline-block;
+    }
+  }
 }
 
 #nice-nav {
@@ -40,10 +83,10 @@ $secondary: #555;
   background: $bg;
   margin: 0;
   padding: 0;
-  border: 3px solid #fbfbfb;
+  border: 3px solid $tertiary;
   border-top: 0;
   border-right: 0;
-
+  z-index: 1000;
   li {
     display: block;
     cursor: pointer;
@@ -81,9 +124,6 @@ $secondary: #555;
     height: 18px;
     line-height: 15px;
     padding: 0;
-  }
-
-  pre {
   }
 
   #nice-min span {

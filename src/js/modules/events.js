@@ -18,12 +18,18 @@ var events = function() {
 
   $('#nice-diff').on('click', function(e) {
     e.preventDefault();
+    $('#nice-pre').toggleClass('is-active');
     diff.init();
   });
 
   $('#nice-toggle').on('click', function(e) {
     e.preventDefault();
     content.toggleHTML();
+  });
+
+  $('#nice-pre').on('click', function(e) {
+    e.preventDefault();
+    content.getSelection();
   });
 
 };

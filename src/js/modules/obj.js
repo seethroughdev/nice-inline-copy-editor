@@ -9,23 +9,24 @@ var nav = {
 
   init: function() {
     this.createObj();
-    this.style();
   },
 
   createObj: function() {
     var div = document.createElement('div');
     div.setAttribute('id', 'nice-obj');
     div.setAttribute('contenteditable', false);
+    div.setAttribute('class', 'is-min');
     div.innerHTML = objTemplate;
-    this.append(div);
+    this.style(div);
   },
 
-  style: function() {
+  style: function(div) {
     var link = document.createElement('link');
     link.setAttribute('rel','stylesheet');
     link.setAttribute('href','index.css');
     link.setAttribute('type','text/css');
     head.appendChild(link);
+    this.append(div);
   },
 
   append: function(div) {
