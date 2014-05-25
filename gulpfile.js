@@ -47,7 +47,7 @@ gulp.task('js', function() {
 
 gulp.task('css', function() {
   return gulp.src(path.src.css + '*.scss')
-    .pipe(changed('path.dist.root', { extension: '.css' }))
+    .pipe(changed(path.dist.root, { extension: '.css' }))
     .pipe(sass())
     .pipe(prefix('last 2 version', '> 1%'))
     .pipe(base64())
