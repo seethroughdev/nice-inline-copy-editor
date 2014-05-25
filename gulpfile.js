@@ -41,8 +41,7 @@ gulp.task('js', function() {
   return browserify(path.src.js + 'index.js').bundle({ debug:true })
     .pipe(source('bundle.js'))
     .pipe(streamify(uglify()))
-    .pipe(gulp.dest(path.dist.root))
-    // .pipe(livereload());
+    .pipe(gulp.dest(path.dist.root));
 });
 
 gulp.task('css', function() {
@@ -51,8 +50,7 @@ gulp.task('css', function() {
     .pipe(prefix('last 2 version', '> 1%'))
     .pipe(base64())
     .pipe(csso())
-    .pipe(gulp.dest(path.dist.root))
-    // .pipe(livereload());
+    .pipe(gulp.dest(path.dist.root));
 });
 
 gulp.task('svg', function() {
@@ -64,9 +62,16 @@ gulp.task('svg', function() {
 });
 
 gulp.task('watch', [ 'js', 'svg', 'css' ], function() {
+  var server = livereload();
+
   gulp.watch(path.src.js + '**', [ 'js' ]);
   gulp.watch(path.src.images + '**', [ 'svg' ]);
   gulp.watch(path.src.css + '**', [ 'css' ]);
+
+  gulp.watch(path.dist.root + '**').on('change', function(file) {
+    server.changed(file.path);
+  });
+
 });
 
 gulp.task('deploy', [ 'build' ], function() {
