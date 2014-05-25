@@ -40,6 +40,7 @@ var path = {
 
 gulp.task('js', function() {
   return browserify(path.src.js + 'index.js').bundle({ debug:true })
+    .pipe(changed(path.dist.root))
     .pipe(source('bundle.js'))
     .pipe(streamify(uglify()))
     .pipe(gulp.dest(path.dist.root));
@@ -57,14 +58,13 @@ gulp.task('css', function() {
 
 gulp.task('svg', function() {
   return gulp.src(path.src.svg + '*.svg')
-    .pipe(changed(path.src.font, { extension: '.ttf' }))
     .pipe(iconfont({
       fontName: 'myfont'
     }))
     .pipe(gulp.dest(path.src.font));
 });
 
-gulp.task('watch', [ 'js', 'svg', 'css' ], function() {
+gulp.task('watch', [ 'js', 'css' ], function() {
   var server = livereload();
 
   gulp.watch(path.src.js + '**', [ 'js' ]);
@@ -88,4 +88,4 @@ gulp.task('deploy', [ 'build' ], function() {
 
 gulp.task('default', [ 'watch' ]);
 
-gulp.task('build', [ 'js', 'svg', 'css' ]);
+gulp.task('build', [ 'js', 'css' ]);
