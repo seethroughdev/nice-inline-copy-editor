@@ -2,7 +2,6 @@
 
 var gulp       = require('gulp')
 ,   browserify = require('browserify')
-,   clean      = require('gulp-clean')
 ,   source     = require('vinyl-source-stream')
 ,   uglify     = require('gulp-uglify')
 ,   streamify  = require('gulp-streamify')
@@ -37,7 +36,7 @@ var path = {
 gulp.task('js', function() {
   return browserify(path.src.js + 'index.js').bundle({ debug:true })
     .pipe(source('bundle.js'))
-    // .pipe(streamify(uglify()))
+    .pipe(streamify(uglify()))
     .pipe(gulp.dest(path.dist.root))
     .pipe(livereload());
 });
@@ -46,10 +45,8 @@ gulp.task('css', function() {
   return gulp.src(path.src.css + '*.scss')
     .pipe(sass())
     .pipe(prefix('last 2 version', '> 1%'))
-    .pipe(base64({
-      debug: true
-    }))
-    // .pipe(csso())
+    .pipe(base64())
+    .pipe(csso())
     .pipe(gulp.dest(path.dist.root))
     .pipe(livereload());
 });
