@@ -4,6 +4,7 @@ var gulp       = require('gulp')
 ,   browserify = require('browserify')
 ,   source     = require('vinyl-source-stream')
 ,   deploy     = require('gulp-gh-pages')
+,   changed    = require('gulp-changed')
 ,   uglify     = require('gulp-uglify')
 ,   streamify  = require('gulp-streamify')
 ,   livereload = require('gulp-livereload')
@@ -12,7 +13,7 @@ var gulp       = require('gulp')
 ,   csso       = require('gulp-csso')
 ,   svgo       = require('gulp-svgo')
 ,   base64     = require('gulp-base64')
-,   iconfont    = require('gulp-iconfont');
+,   iconfont   = require('gulp-iconfont');
 
 
 /*==========  CONFIG  ==========*/
@@ -46,6 +47,7 @@ gulp.task('js', function() {
 
 gulp.task('css', function() {
   return gulp.src(path.src.css + '*.scss')
+    .pipe(changed('path.dist.root', { extension: '.css' }))
     .pipe(sass())
     .pipe(prefix('last 2 version', '> 1%'))
     .pipe(base64())
