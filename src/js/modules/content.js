@@ -35,6 +35,7 @@ var content = {
             .replace(/></g, '>\n\n<')
             .replace(/^<iframe.+\/iframe>/g, '')
             .replace(/^<object.+\/object>/g, '')
+            .replace(/^<noscript.+\/noscript>/g, '')
             .replace(/<script.+\/script>/g, '');
   },
 
