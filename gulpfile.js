@@ -3,6 +3,7 @@
 var gulp       = require('gulp')
 ,   browserify = require('browserify')
 ,   source     = require('vinyl-source-stream')
+,   deploy     = require('gulp-gh-pages')
 ,   uglify     = require('gulp-uglify')
 ,   streamify  = require('gulp-streamify')
 ,   livereload = require('gulp-livereload')
@@ -27,6 +28,9 @@ var path = {
   },
   dist: {
     root: './dist/'
+  },
+  gh: {
+    root: 'git@github.com:seethroughtrees/inline-copy-editor.git'
   }
 };
 
@@ -63,6 +67,11 @@ gulp.task('watch', [ 'js', 'svg', 'css' ], function() {
   gulp.watch(path.src.js + '**', [ 'js' ]);
   gulp.watch(path.src.images + '**', [ 'svg' ]);
   gulp.watch(path.src.css + '**', [ 'css' ]);
+});
+
+gulp.task('deploy', function() {
+  gulp.src(path.dist.root + '**/*')
+    .pipe(deploy(path.gh.root));
 });
 
 
