@@ -21,19 +21,18 @@ $secondary: #555;
   text-align: center;
   overflow: hidden;
   transition: all 200ms linear;
-  min-height: 300px;
+  height: 300px;
 
   &.is-min {
     width: $liSize;
     height: $liSize + 18px;
     min-height: $liSize + 18px;
 
-    #nice-min {
-      // transform: rotate(-90deg);
+    #nice-min span {
+      transform: rotateX(180deg);
+      display: block;
     }
-
   }
-
 }
 
 #nice-nav {
@@ -50,17 +49,23 @@ $secondary: #555;
     cursor: pointer;
     width: $liSize;
     font-size: 12px;
-    border-top: 1px solid white;
+    border-top: 1px solid lighten($bg, 4%);
     border-bottom: 1px solid darken($bg, 5%);
     font-family: 'myfont';
     font-size: $liSize * .6;
     line-height: 1em;
     display: block;
     padding: 10px 0;
+    color: $primary;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    transition: all 200ms linear;
     &:hover {
-      color: red;
+      color: $secondary;
+      background: darken($bg, 2%);
+    }
+    &:nth-of-type(2) {
+      border-top: 0;
     }
   }
 
@@ -81,21 +86,8 @@ $secondary: #555;
   pre {
   }
 
-  // #nice-off {
-  //   content: '\57345';
-  // }
-
-  // #nice-diff {
-  //   background-image: url(../svg/diff.svg);
-  // }
-
-  // #nice-toggle {
-  //   background-image: url(../svg/toggle.svg);
-  // }
-
-  #nice-min {
-    // transform: rotate(90deg);
+  #nice-min span {
+    transition: all 200ms linear;
   }
-
 
 }
