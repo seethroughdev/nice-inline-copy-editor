@@ -25,6 +25,7 @@ var events = function() {
   $('#nice-toggle').on('click', function(e) {
     e.preventDefault();
     content.toggleHTML();
+    window.console.log(content.currentHTML, content.originalHTML);
   });
 
   $('#nice-pre').on('click', function(e) {
@@ -36,7 +37,7 @@ var events = function() {
     .on('mouseover', function(e) {
       var $title = $('#nice-title');
       $title.text($(e.srcElement).attr('data-text'));
-    }).on('mouseleave', function(e) {
+    }).on('mouseleave', function() {
       var $title = $('#nice-title');
       $title.text($title.attr('data-text'));
     });
