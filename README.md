@@ -7,11 +7,11 @@ Its mostly for prototyping and design.  And of course is only temporary.  (Just 
 **To install, just drag this link up to your bookmarks bar:**
 
 
-<a href="javascript:var head = document.getElementsByTagName('head')[0];
+[NICE: Editor](javascript:var head = document.getElementsByTagName('head')[0];
 var script = document.createElement('script');
 script.src = 'https://seethroughtrees.github.io/inline-copy-editor/bundle.js';
 script.async = true;
-head.appendChild(script);">NICE: Editor</a>
+head.appendChild(script);)
 
 
 ### Usage
@@ -38,5 +38,4 @@ some sites will not work properly.  This goes the same for the toggle button.  I
 give it a shot and hope they work for you.
 
 Regardless, the editable feature should always work.**
-
 
