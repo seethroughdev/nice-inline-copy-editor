@@ -12,7 +12,17 @@
 
   <button id="test">Test Script</button>
 
-  <script src="bundle.js"></script>
+  <a href="javascript:var head = document.getElementsByTagName('head')[0];
+var script = document.createElement('script');
+script.src = 'http://0.0.0.0:8080/bundle.js';
+head.appendChild(script);">Local Version</a>
+
+  <a href="javascript:var head = document.getElementsByTagName('head')[0];
+var script = document.createElement('script');
+script.src = 'http://seethroughtrees.github.io/inline-copy-editor/bundle.js';
+head.appendChild(script);">Remote Version</a>
+
+  <!-- <script src="bundle.js"></script> -->
 
 </body>
 </html>

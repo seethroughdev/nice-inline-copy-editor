@@ -14,7 +14,7 @@ var content = {
   wrapContent: function() {
     $body.html('<div id="nice-content">' + $body.html() + '</div>');
     this.originalHTML = this.currentHTML = this.getHTML();
-    return this.makeEditable($body);
+    return this.makeEditable($('#nice-content'));
   },
 
   makeEditable: function(el) {
@@ -33,10 +33,12 @@ var content = {
             .trim()
             .replace(/>\s+</g, '><')
             .replace(/></g, '>\n\n<')
-            .replace(/^<iframe.+\/iframe>/g, '')
-            .replace(/^<object.+\/object>/g, '')
-            .replace(/^<noscript.+\/noscript>/g, '')
-            .replace(/<script.+\/script>/g, '');
+            .replace(/<iframe.+\/iframe>/g, '')
+            .replace(/<object.+\/object>/g, '')
+            .replace(/<noscript.+\/noscript>/g, '')
+            .replace(/<script.+\/script>/g, '')
+            .replace(/&amp;amp;lt;.+&amp;amp;gt;/g, '')
+            .replace(/&amp;lt;.+&amp;gt;/g, '');
   },
 
   setHTML: function(html) {
