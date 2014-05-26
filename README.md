@@ -7,11 +7,8 @@ Its mostly for prototyping and design.  And of course is only temporary.  (Just 
 **To install, just drag this link up to your bookmarks bar:**
 
 
-[NICE: Editor](javascript:var head = document.getElementsByTagName('head')[0];
-var script = document.createElement('script');
-script.src = 'https://seethroughtrees.github.io/inline-copy-editor/bundle.js';
-script.async = true;
-head.appendChild(script);)
+[NICE: Editor](javascript:var head = document.getElementsByTagName('head')[0];var script = document.createElement('script');script.src = 'https://seethroughtrees.github.io/inline-copy-editor/bundle.js';
+script.async = true;head.appendChild(script))
 
 
 ### Usage
