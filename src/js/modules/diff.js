@@ -1,7 +1,7 @@
 'use strict';
 
-var $ = window.jQuey || require('domtastic')
-,   jsdiff = require('diff')
+var $       = require('domtastic/bundle/full/domtastic')
+,   jsdiff  = require('diff')
 ,   content = require('./content');
 
 var diffObj = {
@@ -11,7 +11,6 @@ var diffObj = {
     var currentHTML = content.stripHTML(content.getHTML());
 
     var diff = jsdiff.diffLines(originalHTML, currentHTML);
-    window.console.log(diff);
     this.populateDiff(diff);
   },
 

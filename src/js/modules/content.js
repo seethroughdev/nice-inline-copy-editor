@@ -1,6 +1,6 @@
 'use strict';
 
-var $ = window.jQuery || require('domtastic');
+var $ = require('domtastic/bundle/full/domtastic');
 
 var $body      = $('body'),
     isOriginal = true;
