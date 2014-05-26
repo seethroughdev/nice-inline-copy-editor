@@ -42,7 +42,7 @@ gulp.task('js', function() {
   return browserify(path.src.js + 'index.js')
     .bundle({ debug:true })
     .pipe(source('bundle.js'))
-    // .pipe(streamify(uglify()))
+    .pipe(streamify(uglify()))
     .pipe(gulp.dest(path.dist.root));
 });
 
