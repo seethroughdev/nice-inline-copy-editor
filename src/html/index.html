@@ -14,9 +14,23 @@
 
   <button id="test">Test Script</button>
 
-  <a href="javascript:function(var head = document.getElementsByTagName('head')[0];var script = document.createElement('script');    script.src = 'http://0.0.0.0:8080/bundle.js';script.async = true;head.appendChild(script);) {});">Local Version</a>
+  <a href="javascript:(function(
+      var head = document.getElementsByTagName('head')[0];
+      var script = document.createElement('script');
+      script.src = 'http://0.0.0.0:8080/bundle.js';
+      script.async = true;
+      head.appendChild(script);
+    ))();
+    ">Local Version</a>
 
-  <a href="javascript:function(var head = document.getElementsByTagName('head')[0];var script = document.createElement('script');script.src = 'https://seethroughtrees.github.io/inline-copy-editor/bundle.js';script.async = true;head.appendChild(script);) {});">Remote Version</a>
+  <a href="javascript:(function(
+      var head = document.getElementsByTagName('head')[0];
+      var script = document.createElement('script');
+      script.src = 'https://seethroughtrees.github.io/inline-copy-editor/bundle.js';
+      script.async = true;
+      head.appendChild(script);
+    ))();
+    ">Remote Version</a>
 
 </body>
 </html>

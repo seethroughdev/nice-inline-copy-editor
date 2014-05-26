@@ -77,8 +77,7 @@ gulp.task('html', function() {
     .pipe(changed(path.dist.root))
     .pipe(htmlmin({
       collapseWhitespace: true,
-      removeComments: true,
-      minifyJS: true
+      removeComments: true
     }))
     .pipe(gulp.dest(path.dist.root));
 });
