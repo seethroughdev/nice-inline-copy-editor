@@ -4,11 +4,7 @@ This is a javascript bookmarklet tool to edit the copy of websites inline.
 
 Its mostly for prototyping and design.  And of course is only temporary.  (Just refresh to undo).
 
-**To install, just drag this link up to your bookmarks bar:**
-
-
-[NICE: Editor](javascript:var head = document.getElementsByTagName('head')[0];var script = document.createElement('script');script.src = 'https://seethroughtrees.github.io/inline-copy-editor/bundle.js';
-script.async = true;head.appendChild(script))
+**To install, just visit [this link](https://seethroughtrees.github.io/inline-copy-editor/) and drag the button up to your bookmarks bar:**
 
 
 ### Usage
