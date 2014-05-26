@@ -1,6 +1,6 @@
 $liSize: 60px;
-$bg: hsla(0, 11%, 91%, 1);
-$primary: hsla(0, 0%, 61%, 1);
+$bg: hsla(0, 11%, 21%, 1);
+$primary: hsla(69, 54%, 48%, 1);
 $secondary: #555;
 $tertiary: #fbfbfb;
 
@@ -108,7 +108,7 @@ $tertiary: #fbfbfb;
     -moz-osx-font-smoothing: grayscale;
     transition: all 200ms linear;
     &:hover {
-      color: $secondary;
+      color: $primary;
       background: darken($bg, 2%);
     }
     &:nth-of-type(2), &:nth-of-type(1) {

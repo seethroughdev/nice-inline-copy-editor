@@ -32,6 +32,15 @@ var events = function() {
     content.getSelection();
   });
 
+  $('#nice-nav li')
+    .on('mouseover', function(e) {
+      var $title = $('#nice-title');
+      $title.text($(e.srcElement).attr('data-text'));
+    }).on('mouseleave', function(e) {
+      var $title = $('#nice-title');
+      $title.text($title.attr('data-text'));
+    });
+
 };
 
 module.exports = events;
