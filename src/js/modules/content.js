@@ -29,9 +29,11 @@ var content = {
 
   getHTML: function() {
     var html = $('#nice-content').html();
-    return html
-            .trim()
-            .replace(/>\s+</g, '><')
+    return html.trim();
+  },
+
+  stripHTML: function(str) {
+    str = str.replace(/>\s+</g, '><')
             .replace(/></g, '>\n\n<')
             .replace(/<iframe.+\/iframe>/g, '')
             .replace(/<object.+\/object>/g, '')
@@ -39,6 +41,7 @@ var content = {
             .replace(/<script.+\/script>/g, '')
             .replace(/&amp;amp;lt;.+&amp;amp;gt;/g, '')
             .replace(/&amp;lt;.+&amp;gt;/g, '');
+    return str;
   },
 
   setHTML: function(html) {

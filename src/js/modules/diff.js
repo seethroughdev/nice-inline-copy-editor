@@ -7,7 +7,11 @@ var $ = window.jQuey || require('domtastic')
 var diffObj = {
 
   init: function() {
-    var diff = jsdiff.diffLines(content.originalHTML, content.getHTML());
+    var originalHTML = content.stripHTML(content.originalHTML);
+    var currentHTML = content.stripHTML(content.getHTML());
+
+    var diff = jsdiff.diffLines(originalHTML, currentHTML);
+    window.console.log(diff);
     this.populateDiff(diff);
   },
 
