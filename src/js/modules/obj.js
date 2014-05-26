@@ -2,8 +2,9 @@
 
 var objTemplate = require('./template');
 
-var body = document.getElementsByTagName('body')[ 0 ];
-var head = document.getElementsByTagName('head')[ 0 ];
+var body   = document.getElementsByTagName('body')[ 0 ]
+,   head   = document.getElementsByTagName('head')[ 0 ]
+,   cssLoc = 'https://seethroughtrees.github.io/inline-copy-editor/index.css';
 
 var nav = {
 
@@ -23,7 +24,7 @@ var nav = {
   style: function(div) {
     var link = document.createElement('link');
     link.setAttribute('rel','stylesheet');
-    link.setAttribute('href','https://seethroughtrees.github.io/inline-copy-editor/index.css');
+    link.setAttribute('href', cssLoc);
     link.setAttribute('type','text/css');
     head.appendChild(link);
     this.append(div);
