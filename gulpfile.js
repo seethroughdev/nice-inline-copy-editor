@@ -11,6 +11,7 @@ var gulp       = require('gulp')
 ,   sass       = require('gulp-sass')
 ,   prefix     = require('gulp-autoprefixer')
 ,   csso       = require('gulp-csso')
+,   htmlmin    = require('gulp-htmlmin')
 ,   svgo       = require('gulp-svgo')
 ,   base64     = require('gulp-base64')
 ,   iconfont   = require('gulp-iconfont');
@@ -25,7 +26,8 @@ var path = {
     css: './src/scss/',
     svg: './src/svg/',
     images: './src/images/',
-    font: './src/font/'
+    font: './src/font/',
+    html: './src/html/'
   },
   dist: {
     root: './dist/'
@@ -56,6 +58,12 @@ gulp.task('css', function() {
     .pipe(gulp.dest(path.dist.root));
 });
 
+gulp.task('vendor', function() {
+  return gulp.src(path.src.css + 'vendor/*.css')
+    .pipe(changed(path.dist.root))
+    .pipe(gulp.dest(path.dist.root));
+});
+
 gulp.task('svg', function() {
   return gulp.src(path.src.svg + '*.svg')
     .pipe(iconfont({
@@ -64,12 +72,24 @@ gulp.task('svg', function() {
     .pipe(gulp.dest(path.src.font));
 });
 
-gulp.task('watch', [ 'js', 'css' ], function() {
+gulp.task('html', function() {
+  return gulp.src(path.src.html + '*.html')
+    .pipe(changed(path.dist.root))
+    .pipe(htmlmin({
+      collapseWhitespace: true,
+      removeComments: true,
+      minifyJS: true
+    }))
+    .pipe(gulp.dest(path.dist.root));
+});
+
+gulp.task('watch', [ 'js', 'css', 'vendor', 'html' ], function() {
   var server = livereload();
 
   gulp.watch(path.src.js + '**', [ 'js' ]);
   gulp.watch(path.src.images + '**', [ 'svg' ]);
   gulp.watch(path.src.css + '**', [ 'css' ]);
+  gulp.watch(path.src.html + '**', [ 'html' ]);
 
   gulp.watch(path.dist.root + '**').on('change', function(file) {
     server.changed(file.path);
@@ -88,4 +108,4 @@ gulp.task('deploy', [ 'build' ], function() {
 
 gulp.task('default', [ 'watch' ]);
 
-gulp.task('build', [ 'js', 'css' ]);
+gulp.task('build', [ 'js', 'css', 'vendor', 'html' ]);
