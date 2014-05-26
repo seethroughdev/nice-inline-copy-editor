@@ -25,7 +25,7 @@ var events = function() {
   $('#nice-toggle').on('click', function(e) {
     e.preventDefault();
     content.toggleHTML();
-    window.console.log(content.currentHTML, content.originalHTML);
+    window.console.log(content.currentHTML, content.originalHTML, 'yeah');
   });
 
   $('#nice-pre').on('click', function(e) {
