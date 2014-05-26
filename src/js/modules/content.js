@@ -33,7 +33,7 @@ var content = {
   },
 
   stripHTML: function(str) {
-    str = str.replace(/>[\s|\n]+</g, '><')
+    str = str.replace(/>[\s|\n|\t| ]+</g, '><')
             .replace(/></g, '>\n\n<')
             .replace(/<iframe.+\/iframe>/g, '')
             .replace(/<object.+\/object>/g, '')
