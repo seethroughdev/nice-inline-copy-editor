@@ -14,12 +14,6 @@ This is a <a href="http://en.wikipedia.org/wiki/Bookmarklet" target="_blank">jav
 
 To edit any page, just click the bookmark in your bookmarks bar.  That will disable the links and javascript and put into edit mode.  For more options, click the expander arrow.
 
-#### Arrow Button
-
-This collapses or expands the nav.
-
-![Arrow Button](https://seethroughtrees.github.io/nice-inline-copy-editor/images/collapse.png)
-
 #### Toggle Button
 
 This button will toggle between your current edited HTML, and the original.
@@ -48,4 +42,4 @@ The editing should work on all pages though.
 
 ### SUPPORT
 
-**NICE: Editor** Works in all major modern browsers. Meaning, IE has not been tested.  But it should work in 10+.  Maybe even 9.
+**NICE: Editor** Works in all major modern browsers. Meaning, I have not tested IE.  But it should work in 9+.
