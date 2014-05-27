@@ -3,6 +3,7 @@ $bg: hsla(0, 11%, 21%, 1);
 $primary: hsl(163, 13%, 51%);
 $secondary: #b7b7b7;
 $tertiary: #fbfbfb;
+$titleHeight: 18px;
 
 @font-face {
   font-family: 'myfont';
@@ -25,8 +26,8 @@ $tertiary: #fbfbfb;
 
   &.is-min {
     width: $liSize;
-    height: $liSize + 18px;
-    min-height: $liSize + 18px;
+    height: $liSize + $titleHeight;
+    min-height: $liSize + $titleHeight;
 
     #nice-min span {
       transform: rotateX(180deg);
@@ -125,7 +126,7 @@ $tertiary: #fbfbfb;
     height: auto;
     margin: 0;
     width: 100%;
-    height: 18px;
+    height: $titleHeight;
     line-height: 15px;
     padding: 0;
   }

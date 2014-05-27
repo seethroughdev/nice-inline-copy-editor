@@ -12,6 +12,7 @@ var gulp       = require('gulp')
 ,   prefix     = require('gulp-autoprefixer')
 ,   csso       = require('gulp-csso')
 ,   htmlmin    = require('gulp-htmlmin')
+,   imagemin   = require('gulp-imagemin')
 ,   svgo       = require('gulp-svgo')
 ,   base64     = require('gulp-base64')
 ,   iconfont   = require('gulp-iconfont');
@@ -33,7 +34,7 @@ var path = {
     root: './dist/'
   },
   gh: {
-    root: 'git@github.com:seethroughtrees/inline-copy-editor.git'
+    root: 'git@github.com:seethroughtrees/nice-inline-copy-editor.git'
   }
 };
 
@@ -72,21 +73,28 @@ gulp.task('svg', function() {
     .pipe(gulp.dest(path.src.font));
 });
 
+gulp.task('images', function() {
+  return gulp.src(path.src.images + '*.png')
+    .pipe(changed(path.dist.root + 'images/'))
+    .pipe(imagemin())
+    .pipe(gulp.dest(path.dist.root + 'images/'));
+});
+
 gulp.task('html', function() {
   return gulp.src(path.src.html + '*.html')
     .pipe(changed(path.dist.root))
-    .pipe(htmlmin({
-      collapseWhitespace: true,
-      removeComments: true
-    }))
+    // .pipe(htmlmin({
+    //   collapseWhitespace: true,
+    //   removeComments: true
+    // }))
     .pipe(gulp.dest(path.dist.root));
 });
 
-gulp.task('watch', [ 'js', 'css', 'vendor', 'html' ], function() {
+gulp.task('watch', [ 'js', 'css', 'vendor', 'html', 'images' ], function() {
   var server = livereload();
 
   gulp.watch(path.src.js + '**', [ 'js' ]);
-  gulp.watch(path.src.images + '**', [ 'svg' ]);
+  gulp.watch(path.src.images + '**', [ 'svg', 'images' ]);
   gulp.watch(path.src.css + '**', [ 'css' ]);
   gulp.watch(path.src.html + '**', [ 'html' ]);
 
@@ -107,4 +115,4 @@ gulp.task('deploy', [ 'build' ], function() {
 
 gulp.task('default', [ 'watch' ]);
 
-gulp.task('build', [ 'js', 'css', 'vendor', 'html' ]);
+gulp.task('build', [ 'js', 'css', 'vendor', 'html', 'images' ]);

@@ -1,3 +1,28 @@
-body {
+body{
+  background: #f3f3f3;
+}
+
+header {
   text-align: center;
+}
+
+.btn {
+  background-color: hsl(163, 13%, 51%);
+  border: 0;
+  &:hover {
+    background-color: darken(hsl(163, 13%, 51%), 10%);
+  }
+}
+
+.container {
+  max-width: 40em;
+}
+
+h3 {
+  font-weight: bold;
+}
+
+.btn-image {
+  float: left;
+  margin: 1em 2em 2em .5em;
 }
