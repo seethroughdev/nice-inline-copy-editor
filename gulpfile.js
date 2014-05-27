@@ -11,7 +11,7 @@ var gulp       = require('gulp')
 ,   sass       = require('gulp-sass')
 ,   prefix     = require('gulp-autoprefixer')
 ,   csso       = require('gulp-csso')
-,   htmlmin    = require('gulp-htmlmin')
+,   htmlpretty = require('gulp-html-prettify')
 ,   imagemin   = require('gulp-imagemin')
 ,   svgo       = require('gulp-svgo')
 ,   base64     = require('gulp-base64')
@@ -83,10 +83,7 @@ gulp.task('images', function() {
 gulp.task('html', function() {
   return gulp.src(path.src.html + '*.html')
     .pipe(changed(path.dist.root))
-    // .pipe(htmlmin({
-    //   collapseWhitespace: true,
-    //   removeComments: true
-    // }))
+    .pipe(htmlpretty())
     .pipe(gulp.dest(path.dist.root));
 });
 

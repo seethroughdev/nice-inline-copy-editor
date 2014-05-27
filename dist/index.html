@@ -1,17 +1,21 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <title>NICE: New Inline Copy Editor</title>
     <link rel="stylesheet" href="kraken.css">
     <link rel="stylesheet" href="local.css">
-  </head>
-  <body>
+</head>
+
+<body>
     <div class="container">
-      <header>
-        <h1>NICE: New Inline Copy Editor</h1>
-        <div>
-          <a class="btn btn-large" href="javascript:
+        <header>
+
+            <h1>NICE: New Inline Copy Editor</h1>
+
+            <div>
+                <a class="btn btn-large" href="javascript:
           (function(){
           var head = document.getElementsByTagName('head')[0];
           var script = document.createElement('script');
@@ -20,46 +24,60 @@
           head.appendChild(script);
           })();
           ">NICE: Editor</a>
+            </div>
+            <br>
+            <p><em>To install, simply drag the above button to your bookmarks bar</em>
+            </p>
+            <p>Or for a demo, just click it and start editing this page.</p>
+
+        </header>
+
+        <hr>
+
+        <h3>DESCRIPTION</h3>
+
+        <p>NICE: Editor is an easy way to change the text on your website for a quick visual prototype or copy editor.</p>
+        <p>This is a <a href="http://en.wikipedia.org/wiki/Bookmarklet" target="_blank">javascript bookmarklet</a>and of course, only live in the browser. And refreshing the page will reset all changes.</p>
+
+        <h3>USAGE</h3>
+        <p>To edit any page, just click the bookmark in your bookmarks bar. That will disable the links and javascript and put into edit mode. For more options, click the expander arrow.</p>
+
+        <div class="row">
+            <img class="btn-image" src="images/toggle.png" alt="Toggle Button">
+            <h4>Toggle Button</h4>
+            <p>This button will toggle between your current edited HTML, and the original.</p>
         </div>
-        <br>
-        <p><em>To install, simply drag the above button to your bookmarks bar</em></p>
-        <p>Or for a demo, just click it and start editing this page.</p>
-      </header>
-      <hr>
-      <h3>DESCRIPTION</h3>
-      <p>NICE: Editor is an easy way to change the text on your website for a quick visual prototype or copy editor.</p>
-      <p>This is a <a href="http://en.wikipedia.org/wiki/Bookmarklet" target="_blank">javascript bookmarklet</a>and of course, only live in the browser.  And refreshing the page will reset all changes.</p>
-      <h3>USAGE</h3>
-      <p>To edit any page, just click the bookmark in your bookmarks bar.  That will disable the links and javascript and put
-      into edit mode.  For more options, click the expander arrow.</p>
-      <div class="row">
-        <img class="btn-image" src="images/toggle.png" alt="Toggle Button">
-        <h4>Toggle Button</h4>
-        <p>This button will toggle between your current edited HTML, and the original.</p>
-      </div>
-      <div class="row">
-        <img class="btn-image" src="images/diff.png" alt="Diff Button">
-        <h4>Diff Button</h4>
-        <p>Thist button will generate a diff of the changes made.  All additions are in green,
-        and all removals are in red.</p>
-      </div>
-      <div class="row">
-        <img class="btn-image" src="images/off.png" alt="Off Button">
-        <h4>Off Button</h4>
-        <p>This button will remove the NICE button, and reset the DOM configuration.  However, it will
-        keep your changes.</p>
-      </div>
-      <h3>BUGS</h3>
-      <p>Important to know that javascript can make this process difficult.  There are sites that the toggle
-      won't work on.  And also, the diff could find extra issues.  I will keep coming up with cases to help
-      minimize these, but unfortunately, its just part of it.</p>
-      <p>The editing should work on all pages though.</p>
-      <h3>SUPPORT</h3>
-      <p><strong>NICE: Editor</strong> Works in all major modern browsers.  Meaning, IE has not been tested.  But it should work
-      in 10+.  Maybe even 9.</p>
+
+        <div class="row">
+            <img class="btn-image" src="images/diff.png" alt="Diff Button">
+            <h4>Diff Button</h4>
+            <p>This button will generate a diff of the changes made. All additions are in green, and all removals are in red.</p>
+        </div>
+
+        <div class="row">
+            <img class="btn-image" src="images/off.png" alt="Off Button">
+            <h4>Off Button</h4>
+            <p>This button will remove the NICE button, and reset the DOM configuration. However, it will keep your changes.</p>
+        </div>
+
+        <h3>BUGS</h3>
+
+        <p>Important to know that javascript can make this process difficult. There are sites that the toggle won't work on. And also, the diff could find extra issues. I will keep coming up with cases to help minimize these, but unfortunately, its just
+            part of it.</p>
+        <p>The editing should work on all pages though.</p>
+
+        <h3>SUPPORT</h3>
+
+        <p>
+            <strong>NICE: Editor</strong> Works in all major modern browsers. Meaning, IE has not been tested. But it should work in 10+. Maybe even 9.
+        </p>
+
     </div>
+
     <hr>
+
     <h3>Debug</h3>
+
     <button id="test">Test Script</button>
     <a href="javascript:
     (function(){
@@ -79,18 +97,21 @@
     head.appendChild(script);
     })();
     ">NICE: Editor</a>
-    <a href="https://github.com/seethroughtrees/nice-inline-copy-editor"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/567c3a48d796e2fc06ea80409cc9dd82bf714434/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png"></a>
+    <a href="https://github.com/seethroughtrees/nice-inline-copy-editor">
+        <img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/567c3a48d796e2fc06ea80409cc9dd82bf714434/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67"
+        alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png">
+    </a>
 
     <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-51347974-1', 'seethroughtrees.github.io');
-      ga('send', 'pageview');
-
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    
+          ga('create', 'UA-51347974-1', 'seethroughtrees.github.io');
+          ga('send', 'pageview');
     </script>
 
-  </body>
+</body>
+
 </html>
