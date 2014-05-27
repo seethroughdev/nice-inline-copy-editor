@@ -109,7 +109,7 @@ $titleHeight: 18px;
     -moz-osx-font-smoothing: grayscale;
     transition: all 200ms linear;
     &:hover {
-      color: hsla(69, 54%, 48%, 1);
+      color: $tertiary;
       background: darken($bg, 3%);
     }
     &:nth-of-type(2), &:nth-of-type(1) {
