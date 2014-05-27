@@ -43,7 +43,7 @@ var content = {
 
   toggleHTML: function() {
 
-    isOriginal = this.getHTML() === this.originalHTML ? true : false;
+    isOriginal = strip(this.getHTML()) === strip(this.originalHTML) ? true : false;
 
     if (!isOriginal) {
       this.currentHTML = this.getHTML();
