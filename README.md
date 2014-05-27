@@ -10,6 +10,12 @@ This is a <a href="http://en.wikipedia.org/wiki/Bookmarklet" target="_blank">jav
 
 To edit any page, just click the bookmark in your bookmarks bar.  That will disable the links and javascript and put into edit mode.  For more options, click the expander arrow.
 
+#### Arrow Button
+
+This collapses or expands the nav.
+
+![Arrow Button](https://seethroughtrees.github.io/nice-inline-copy-editor/images/collapse.png)
+
 #### Toggle Button
 
 This button will toggle between your current edited HTML, and the original.
