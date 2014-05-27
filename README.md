@@ -1,5 +1,8 @@
 ## New Inline Copy Editor: Nice.
 
+**Att: Because you can't place bookmarklets in github descriptions.  Go to the
+[Github Page](https://seethroughtrees.github.io/nice-inline-copy-editor/) to grab the button.
+
 **NICE: Editor** is an easy way to change the text on your website for a quick visual prototype or copy editor.
 
 This is a <a href="http://en.wikipedia.org/wiki/Bookmarklet" target="_blank">javascript bookmarklet</a> and of course, only lives in the browser.  Refreshing the page will reset all changes.
