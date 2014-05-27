@@ -1,14 +1,6 @@
 ## New Inline Copy Editor: Nice.
 
-This is a javascript bookmarklet tool to edit the copy of websites inline.
-
-Its mostly for prototyping and design.  And of course is only temporary.  (Just refresh to undo).
-
-**Please go to the [Github Page](https://seethroughtrees.github.io/nice-inline-copy-editor/) for all info.**
-
-### DESCRIPTION
-
-NICE: Editor is an easy way to change the text on your website for a quick visual prototype or copy editor.
+**NICE: Editor** is an easy way to change the text on your website for a quick visual prototype or copy editor.
 
 This is a <a href="http://en.wikipedia.org/wiki/Bookmarklet" target="_blank">javascript bookmarklet</a> and of course, only lives in the browser.  Refreshing the page will reset all changes.
 
