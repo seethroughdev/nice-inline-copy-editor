@@ -1,6 +1,7 @@
 'use strict';
 
-var $ = require('domtastic/bundle/full/domtastic');
+var $ = require('domtastic/bundle/full/domtastic')
+,   strip = require('strip');
 
 var $body      = $('body'),
     isOriginal = true;
@@ -33,15 +34,7 @@ var content = {
   },
 
   stripHTML: function(str) {
-    str = str.replace(/>[\s|\n|\t| ]+</g, '><')
-            .replace(/></g, '>\n\n<')
-            .replace(/<iframe.+\/iframe>/g, '')
-            .replace(/<object.+\/object>/g, '')
-            .replace(/<noscript.+\/noscript>/g, '')
-            .replace(/<script.+\/script>/g, '')
-            .replace(/&amp;amp;lt;.+&amp;amp;gt;/g, '')
-            .replace(/&amp;lt;.+&amp;gt;/g, '');
-    return str;
+    return strip(str);
   },
 
   setHTML: function(html) {
