@@ -1,6 +1,6 @@
 ## New Inline Copy Editor: Nice.
 
-** Because you can't place bookmarklets in github descriptions.  Please go to the [Github Page](https://seethroughtrees.github.io/nice-inline-copy-editor/) to grab the button.**
+**Because you can't place bookmarklets in github descriptions.  Please go to the [Github Page](https://seethroughtrees.github.io/nice-inline-copy-editor/) to grab the button.**
 
 --------------------------
 
