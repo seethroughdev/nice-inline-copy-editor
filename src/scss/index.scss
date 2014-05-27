@@ -108,7 +108,7 @@ $tertiary: #fbfbfb;
     -moz-osx-font-smoothing: grayscale;
     transition: all 200ms linear;
     &:hover {
-      color: $primary;
+      color: hsla(69, 54%, 48%, 1);
       background: darken($bg, 3%);
     }
     &:nth-of-type(2), &:nth-of-type(1) {
