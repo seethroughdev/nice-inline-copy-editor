@@ -93,6 +93,7 @@ $titleHeight: 18px;
   padding: 0;
   z-index: 1000;
   li {
+    user-select: none;
     display: block;
     cursor: pointer;
     width: $liSize;
