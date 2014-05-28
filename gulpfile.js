@@ -95,13 +95,20 @@ gulp.task('test', function() {
       configFile: 'karma.conf.js',
       action: 'watch'
     }))
-    .on(error, function(err) {
+    .on('error', function(err) {
       throw err;
     });
 });
 
 
-gulp.task('watch', [ 'js', 'css', 'vendor', 'html', 'images', 'test' ], function() {
+gulp.task('watch', [
+  'js',
+  'css',
+  'vendor',
+  'html',
+  'images',
+  'test'
+  ], function() {
   var server = livereload();
 
   gulp.watch(path.src.js + '**', [ 'js' ]);

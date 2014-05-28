@@ -10,7 +10,7 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['mocha', 'browserify'],
+    frameworks: [ 'mocha', 'chai', 'chai-jquery', 'browserify', 'jquery-1.11.0' ],
 
 
     // list of files / patterns to load in the browser
@@ -22,7 +22,7 @@ module.exports = function(config) {
 
     // list of files to exclude
     exclude: [
-
+      'src/js/index.js'
     ],
 
     // Browserify config (all optional)

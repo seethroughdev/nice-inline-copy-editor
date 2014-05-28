@@ -3,7 +3,8 @@
   "env": {
     "browser": true,
     "node": true,
-    "amd": true
+    "amd": true,
+    "mocha": true
   },
 
   "rules": {
