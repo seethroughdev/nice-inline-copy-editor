@@ -36,8 +36,7 @@ var content = {
   stripHTML: function(str) {
     return strip(str)
       .replace(/(&lt;.+&gt;)/gi, '')
-      .replace(/(&amp;amp;lt;.+&amp;amp;gt;)/gi, '')
-      .replace(/(&amp;lt;.+&amp;gt;)/gi, '');
+      .replace(/(&amp;.+lt;.+&amp;.+gt;)/gi, '');
   },
 
   setHTML: function(html) {
