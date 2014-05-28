@@ -45,11 +45,10 @@ var content = {
   },
 
   toggleHTML: function() {
+    var strippedOriginal = this.stripHTML(this.originalHTML);
+    var strippedCurrent = this.stripHTML(this.getHTML());
 
-    console.log('toggling',isOriginal, this.getHTML(), this.originalHTML);
-
-    isOriginal = strip(this.getHTML()) === strip(this.originalHTML) ? true : false;
-
+    isOriginal = strippedOriginal === strippedCurrent ? true : false;
 
     if (!isOriginal) {
       this.currentHTML = this.getHTML();
