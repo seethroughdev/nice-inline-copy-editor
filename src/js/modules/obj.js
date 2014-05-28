@@ -6,6 +6,8 @@ var body   = document.getElementsByTagName('body')[ 0 ]
 ,   head   = document.getElementsByTagName('head')[ 0 ]
 ,   cssLoc = 'https://seethroughtrees.github.io/nice-inline-copy-editor/index.css';
 
+console.log(window.location);
+
 var nav = {
 
   init: function() {

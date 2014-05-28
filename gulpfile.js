@@ -59,7 +59,7 @@ gulp.task('css', function() {
     .pipe(sass())
     .pipe(prefix('last 2 version', '> 1%'))
     .pipe(base64())
-    .pipe(csso())
+    .pipe(gulpif(env === 'production', csso()))
     .pipe(gulp.dest(path.dist.root));
 });
 
