@@ -12,6 +12,7 @@ var diffObj = {
 
     var diff = jsdiff.diffLines(originalHTML, currentHTML);
     this.populateDiff(diff);
+    console.table(diff, originalHTML, currentHTML )
   },
 
   populateDiff: function(diff) {

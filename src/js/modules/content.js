@@ -34,7 +34,10 @@ var content = {
   },
 
   stripHTML: function(str) {
-    return strip(str);
+    return strip(str)
+      .replace(/(&lt;.+&gt;)/gi, '')
+      .replace(/(&amp;amp;lt;.+&amp;amp;gt;)/gi, '')
+      .replace(/(&amp;lt;.+&amp;gt;)/gi, '');
   },
 
   setHTML: function(html) {
@@ -43,7 +46,10 @@ var content = {
 
   toggleHTML: function() {
 
+    console.log('toggling',isOriginal, this.getHTML(), this.originalHTML);
+
     isOriginal = strip(this.getHTML()) === strip(this.originalHTML) ? true : false;
+
 
     if (!isOriginal) {
       this.currentHTML = this.getHTML();
