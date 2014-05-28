@@ -4,6 +4,7 @@ var gulp       = require('gulp')
 ,   browserify = require('browserify')
 ,   source     = require('vinyl-source-stream')
 ,   deploy     = require('gulp-gh-pages')
+,   karma      = require('gulp-karma')
 ,   changed    = require('gulp-changed')
 ,   uglify     = require('gulp-uglify')
 ,   streamify  = require('gulp-streamify')
@@ -87,7 +88,20 @@ gulp.task('html', function() {
     .pipe(gulp.dest(path.dist.root));
 });
 
-gulp.task('watch', [ 'js', 'css', 'vendor', 'html', 'images' ], function() {
+
+gulp.task('test', function() {
+  return gulp.src('noop')
+    .pipe(karma({
+      configFile: 'karma.conf.js',
+      action: 'watch'
+    }))
+    .on(error, function(err) {
+      throw err;
+    });
+});
+
+
+gulp.task('watch', [ 'js', 'css', 'vendor', 'html', 'images', 'test' ], function() {
   var server = livereload();
 
   gulp.watch(path.src.js + '**', [ 'js' ]);
