@@ -9,6 +9,7 @@ var gulp       = require('gulp')
 ,   uglify     = require('gulp-uglify')
 ,   streamify  = require('gulp-streamify')
 ,   livereload = require('gulp-livereload')
+,   gulpif     = require('gulp-if')
 ,   sass       = require('gulp-sass')
 ,   prefix     = require('gulp-autoprefixer')
 ,   csso       = require('gulp-csso')
@@ -20,6 +21,8 @@ var gulp       = require('gulp')
 
 
 /*==========  CONFIG  ==========*/
+
+var env = process.env.NODE_ENV || 'development';
 
 var path = {
   src: {
@@ -46,7 +49,7 @@ gulp.task('js', function() {
   return browserify(path.src.js + 'index.js')
     .bundle({ debug:true })
     .pipe(source('bundle.js'))
-    .pipe(streamify(uglify()))
+    .pipe(gulpif(env === 'production', streamify(uglify())))
     .pipe(gulp.dest(path.dist.root));
 });
 
@@ -100,14 +103,21 @@ gulp.task('test', function() {
     });
 });
 
+gulp.task('build:test', function() {
+  return gulp.src('noop')
+    .pipe(karma({
+      configFile: 'karma.conf.js',
+      action: 'run'
+    }));
+});
+
 
 gulp.task('watch', [
   'js',
   'css',
   'vendor',
   'html',
-  'images',
-  'test'
+  'images'
   ], function() {
   var server = livereload();
 
@@ -131,6 +141,6 @@ gulp.task('deploy', [ 'build' ], function() {
 /*==========  RUN  ==========*/
 
 
-gulp.task('default', [ 'watch' ]);
+gulp.task('default', [ 'watch', 'test' ]);
 
-gulp.task('build', [ 'js', 'css', 'vendor', 'html', 'images' ]);
+gulp.task('build', [ 'js', 'css', 'vendor', 'html', 'images', 'build:test' ]);
