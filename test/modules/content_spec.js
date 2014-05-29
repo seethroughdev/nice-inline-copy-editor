@@ -2,28 +2,39 @@
 
 var chai = require('chai');
 var expect = require('chai').expect;
-var $ = require('domtastic');
+var $ = require('jquery');
 var content = require('../../src/js/modules/content');
 var obj = require('../../src/js/modules/obj');
 
 
 describe('Content', function () {
 
-  var $body, $content;
-
-  beforeEach(function () {
-    $body = $('body');
-  });
-
   it('should not contain nice-content yet', function () {
     expect($('#nice-content').length).to.equal(0);
   });
 
-  it('should contain a nice-content div', function () {
-    obj.init();
-    content.init();
-    expect($('#nice-content').length).to.equal(1);
+  describe('after init', function () {
+
+
+    beforeEach(function () {
+      obj.init();
+      content.init();
+    });
+
+    it('should contain a nice-content div', function () {
+      expect($('#nice-content').length).to.exist;
+    });
+
+    it('should contain a nice-nav', function () {
+      expect($('#nice-nav').length).to.equal(1);
+    });
+
+    xit('should not allow you to edit nice-obj', function () {
+      expect($('#nice-obj')).to.have.attr('contenteditable');
+    });
+
   });
+
 });
 
 describe('stripHTML', function () {
